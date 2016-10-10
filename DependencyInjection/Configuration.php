@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorSQweb\SQwebBundle\DependencyInjection;
+namespace SQweb\SQwebBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('vendor_s_qweb_s_qweb');
+        $rootNode = $treeBuilder->root('s_qweb_s_qweb');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

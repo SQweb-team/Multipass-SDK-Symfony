@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorSQweb\SQwebBundle\Controller;
+namespace SQweb\SQwebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('VendorSQwebSQwebBundle:Default:index.html.twig');
+        return $this->render('SQwebSQwebBundle:Default:index.html.twig');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorSQweb\SQwebBundle\Tests\Controller;
+namespace SQweb\SQwebBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

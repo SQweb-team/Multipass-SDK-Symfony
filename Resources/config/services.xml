@@ -6,7 +6,7 @@
 
     <!--
     <services>
-        <service id="vendor_s_qweb_s_qweb.example" class="VendorSQweb\SQwebBundle\Example">
+        <service id="s_qweb_s_qweb.example" class="SQweb\SQwebBundle\Example">
             <argument type="service" id="service_id" />
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>

@@ -1,0 +1,32 @@
+{
+    "name" : "SQweb/SQwebBundle",
+    "description" : "SDK SQweb",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Nicolas Verdonck",
+        "email" : "nicolas@sqweb.com"
+    }],
+    "keywords" : [
+        "sqweb",
+        "paywall",
+        "subscription    "
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "SQweb\\SQwebBundle" : ""
+        }
+    },
+    "target-dir" : "SQweb/SQwebBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "1.0"
+        }
+    }
+}
