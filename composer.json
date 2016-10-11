@@ -1,6 +1,6 @@
 {
-    "name" : "SQweb/SQwebBundle",
-    "description" : "SDK SQweb",
+    "name" : "sqweb/symfony_bundle",
+    "description" : "SQweb package for Symfony users",
     "type" : "symfony-bundle",
     "authors" : [{
         "name" : "Nicolas Verdonck",
