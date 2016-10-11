@@ -20,7 +20,15 @@ class SQwebSQwebExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
+        $config = $this->processConfiguration($configuration, $configs)['config'];
+
+        $container->setParameter('id_site', $config['id_site']);
+        $container->setParameter('debug', $config['debug']);
+        $container->setParameter('targeting', $config['targeting']);
+        $container->setParameter('beacon', $config['beacon']);
+        $container->setParameter('dwide', $config['dwide']);
+        $container->setParameter('lang', $config['lang']);
+        $container->setParameter('message', $config['message']);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');

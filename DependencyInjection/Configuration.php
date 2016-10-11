@@ -19,7 +19,21 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('s_qweb_s_qweb');
-
+        $rootNode
+            ->children()
+                ->arrayNode('config')
+                    ->children()
+                        ->integerNode('id_site')->end()
+                        ->booleanNode('debug')->end()
+                        ->booleanNode('targeting')->end()
+                        ->booleanNode('beacon')->end()
+                        ->booleanNode('dwide')->end()
+                        ->scalarNode('lang')->end()
+                        ->scalarNode('message')->end()
+                    ->end()
+                ->end() // twitter
+            ->end()
+        ;
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
