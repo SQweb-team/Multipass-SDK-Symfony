@@ -165,7 +165,7 @@ class SQwebSQweb
         return (1 === preg_match('~^[1-9][0-9]*$~', $string));
     }
 
-    public function waitToDisplay($date, $format, $wait = 0)
+    public function waitToDisplay($date, $wait = 0)
     {
         if ($wait == 0 || $this->abo === 1) {
             return true;
