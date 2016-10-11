@@ -1,3 +1,6 @@
+SQweb Symfony Bundle
+===
+
 Add SQweb on all Twig template
 Go on : app/config/config.yml after
 # Twig configuration
