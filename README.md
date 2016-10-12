@@ -18,14 +18,15 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 ###Using Composer
 
 1. In your project root, execute `composer require sqweb/symfony_sdk`;
-2. Now, go to app/AppKernel.php and add this line to your bundles array: `new SQweb\SQwebBundle\SQwebSQwebBundle()`.
+2. Now, go to app/AppKernel.php and add this line to your bundles array:
+`new SQweb\SQwebBundle\SQwebSQwebBundle()`.
 3. Add in your app/config/config.yml after `# Twig configuration`
-`
+```yml
 globals:
         sqweb: "@s_qweb_s_qweb.SQweb"
-`
+```
 And at the end of your config.yml add
-`
+```yml
 # SQweb Configuration
 s_qweb_s_qweb:
     config:
@@ -36,7 +37,7 @@ s_qweb_s_qweb:
         dwide: false
         lang: "en"
         message: ""
-`
+```
 Without forget replace ID_SITE by your id_site and lang by langage of your website
 
 For additional settings, see "[Options](#options)" below.
