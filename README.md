@@ -19,7 +19,9 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 
 1. In your project root, execute `composer require sqweb/symfony_sdk`;
 2. Now, go to app/AppKernel.php and add this line to your bundles array:
-`new SQweb\SQwebBundle\SQwebSQwebBundle()`.
+```
+new SQweb\SQwebBundle\SQwebSQwebBundle()
+```
 3. Add in your app/config/config.yml after `# Twig configuration`
 ```yml
 globals:
