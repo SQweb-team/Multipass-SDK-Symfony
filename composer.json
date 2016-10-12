@@ -15,8 +15,7 @@
         "MIT"
     ],
     "require" : {
-        "php": ">=5.4.0",
-        "nesbot/carbon": "~1.21"
+        "php": ">=5.5.0"
     },
     "autoload" : {
         "psr-0" : {
@@ -24,11 +23,13 @@
         }
     },
     "target-dir" : "SQweb/SQwebBundle",
-    "repositories" : [{
-    }],
     "extra" : {
     "branch-alias" : {
             "dev-master" : "1.0"
         }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "dev-master",
+        "sebastian/phpcpd": "^2.0"
     }
 }

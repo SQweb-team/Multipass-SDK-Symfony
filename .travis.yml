@@ -1,0 +1,21 @@
+language:
+- php
+php:
+- 5.5
+- 5.6
+- 7.0
+- hhvm
+matrix:
+  allow_failures:
+  - php: hhvm
+cache:
+  directories:
+  - vendor
+before_script:
+- composer self-update
+- composer install
+- phpenv rehash
+- vendor/bin/phpcs -i
+script:
+- vendor/bin/phpcs --standard=PSR2 src/ --extensions=php
+- vendor/bin/phpcpd src/

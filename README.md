@@ -1,7 +1,7 @@
 SQweb Symfony Package
 ===
 
-**This package allows you to easily integrate SQweb on your Laravel powered website.**
+**This package allows you to easily integrate SQweb on your Symfony powered website.**
 
 ##Requirements
 
@@ -17,17 +17,21 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 
 ###Using Composer
 
-1. In your project root, execute `composer require sqweb/symfony_sdk`;
-2. Now, go to app/AppKernel.php and add this line to your bundles array:
-```
+1. In your project root, execute `composer require sqweb/symfony_sdk2. Now, go to app/AppKernel.php and add this line to your bundles array:
+
+```php
 new SQweb\SQwebBundle\SQwebSQwebBundle()
 ```
-3. Add in your app/config/config.yml after `# Twig configuration`
+
+2. Add in your app/config/config.yml after `# Twig configuration`
+
 ```yml
 globals:
         sqweb: "@s_qweb_s_qweb.SQweb"
 ```
-And at the end of your config.yml add
+
+3. And at the end of your config.yml add :
+
 ```yml
 # SQweb Configuration
 s_qweb_s_qweb:
@@ -40,13 +44,12 @@ s_qweb_s_qweb:
         lang: "en"
         message: ""
 ```
-Without forget replace ID_SITE by your id_site and lang by langage of your website
+
+Don't forget to replace `ID_SITE` by your `id_site` and `lang` accordingly.
 
 For additional settings, see "[Options](#options)" below.
 
 ##Usage
-
-The SDK is really simple to use. Here's how to:
 
 ###1. Tagging your pages
 
@@ -60,7 +63,7 @@ This function outputs the SQweb JavaScript tag. Insert it before the closing `</
 
 ###2. Checking the credits of your subscribers
 
-This variable is true if the user subscribe to multipass and false if not, so that you can disable ads and/or unlock premium content.
+This variable is `true` if the user subscribe to multipass and `false` if not, so that you can disable ads and/or unlock premium content.
 
 Use it like this:
 
@@ -74,7 +77,7 @@ Use it like this:
 
 ###3. Showing the Multipass button
 
-Finally, use this code to get the Multipass button on your pages:
+Finally, use this code to display the Multipass button on your pages:
 
 ```php
 {{ sqweb.button|raw }}
@@ -82,31 +85,39 @@ Finally, use this code to get the Multipass button on your pages:
 
 ###4. More functions
 
-1.This function is used to display only a part of your content to non premium users:
+
+#### Display only a part of your content to non premium users
+
 ```php
 {{ sqweb.transpartext(your_content, percent)|raw }}
 ```
 `percent` is the percent of your content you want to display to everyone.
 
 Example:
+
 ```php
 {{ sqweb.transpartext('one two three four', 50)|raw }}
 ```
+
 Will display for free users:
+
 ```
 one two
 ```
 
-2.The following function is used to display your content later for non paying users:
+#### Display your content later for non paying users
+
 ```php
 {% if sqweb.waitToDisplay(publication_date, wait) %}
 	Your content
 {% endif %}
 ```
+
 1. `publication_date` is the date when your content is published on your website.
 2. `wait` is the number of day you want to wait before showing this content to free users.
 
 Example:
+
 ```php
 {% if sqweb.waitToDisplay('2016/10/01', 3) %}
 	Put your content here
@@ -115,7 +126,8 @@ Example:
 {% endif %}
 ```
 
-3.The next function is used to limit the number of articles free users can read a day:
+#### Limit the number of articles free users can read per day
+
 ```php
 {% if sqweb.limitArticle(numbers_of_articles) %}
 	Put your content here
@@ -123,9 +135,11 @@ Example:
 	Here you can display a message that free users will see while your article is not displayed
 {% endif %}
 ```
+
 `number_of_articles` is the number of articles a free user can see.
 
-Example if I want to display only 5 articles to free users:
+For instance, if I want to display only 5 articles to free users:
+
 ```php
 {% if sqweb.limitArticle(5) %}
 	Put your content here
