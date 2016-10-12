@@ -60,7 +60,7 @@ This function outputs the SQweb JavaScript tag. Insert it before the closing `</
 
 ###2. Checking the credits of your subscribers
 
-This function checks if the user has credits, so that you can disable ads and/or unlock premium content.
+This variable is true if the user subscribe to multipass and false if not, so that you can disable ads and/or unlock premium content.
 
 Use it like this:
 
@@ -86,7 +86,7 @@ Finally, use this code to get the Multipass button on your pages:
 ```php
 {{ sqweb.transpartext(your_content, percent)|raw }}
 ```
-`$percent` is the percent of your content you want to display to everyone.
+`percent` is the percent of your content you want to display to everyone.
 
 Example:
 ```php
@@ -99,16 +99,16 @@ one two
 
 2.The following function is used to display your content later for non paying users:
 ```php
-{% if sqweb.waitToDisplay('Date of publish', 'Time to wait before showing articles') %}
+{% if sqweb.waitToDisplay(publication_date, wait) %}
 	Your content
 {% endif %}
 ```
-1. `$publication_date` is the date when your content is published on your website.
-2. `$wait` is the number of day you want to wait before showing this content to free users.
+1. `publication_date` is the date when your content is published on your website.
+2. `wait` is the number of day you want to wait before showing this content to free users.
 
 Example:
 ```php
-{% if sqweb.waitToDisplay('Date of publish', 'Time to wait before showing articles') %}
+{% if sqweb.waitToDisplay('2016/10/01', 3) %}
 	Put your content here
 {% else %}
 	Here you can display a message that free users will see while your article is not displayed
@@ -117,13 +117,13 @@ Example:
 
 3.The next function is used to limit the number of articles free users can read a day:
 ```php
-{% if sqweb.limitArticle($numbers_of_articles) %}
+{% if sqweb.limitArticle(numbers_of_articles) %}
 	Put your content here
 {% else %}
 	Here you can display a message that free users will see while your article is not displayed
 {% endif %}
 ```
-`$number_of_articles` is the number of articles a free user can see.
+`number_of_articles` is the number of articles a free user can see.
 
 Example if I want to display only 5 articles to free users:
 ```php
