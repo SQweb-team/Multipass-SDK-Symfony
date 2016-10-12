@@ -23,11 +23,6 @@
         }
     },
     "target-dir" : "SQweb/SQwebBundle",
-    "extra" : {
-    "branch-alias" : {
-            "dev-master" : "1.0"
-        }
-    },
     "require-dev": {
         "squizlabs/php_codesniffer": "dev-master",
         "sebastian/phpcpd": "^2.0"
