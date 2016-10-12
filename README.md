@@ -84,13 +84,13 @@ Finally, use this code to get the Multipass button on your pages:
 
 1.This function is used to display only a part of your content to non premium users:
 ```php
-{{ sqweb.transpartext(your_content, percent) }}
+{{ sqweb.transpartext(your_content, percent)|raw }}
 ```
 `$percent` is the percent of your content you want to display to everyone.
 
 Example:
 ```php
-{!! {{ sqweb.transpartext('one two three four', 50) }}
+{{ sqweb.transpartext('one two three four', 50)|raw }}
 ```
 Will display for free users:
 ```
