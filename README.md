@@ -51,7 +51,7 @@ The SDK is really simple to use. Here's how to:
 This function outputs the SQweb JavaScript tag. Insert it before the closing `</body>` tag in your HTML.
 
 ```php
-{{sqweb.script|raw}}
+{{ sqweb.script|raw }}
 ```
 
 **If you previously had a SQweb JavaScript tag, make sure to remove it to avoid any conflicts.**
@@ -98,7 +98,7 @@ one two
 2.The following function is used to display your content later for non paying users:
 ```php
 {% if sqweb.waitToDisplay('Date of publish', 'Time to wait before showing articles') %}
-function waitToDisplay($publication_date, $wait) { ... }
+	Your content
 {% endif %}
 ```
 1. `$publication_date` is the date when your content is published on your website.
