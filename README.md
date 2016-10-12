@@ -1,6 +1,8 @@
 SQweb Symfony Package
 ===
 
+[![Build Status](https://travis-ci.org/SQweb-team/SQweb-SDK-Symfony.svg?branch=master)](https://travis-ci.org/SQweb-team/SQweb-SDK-Symfony)
+
 **This package allows you to easily integrate SQweb on your Symfony powered website.**
 
 ##Requirements
