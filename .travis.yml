@@ -19,3 +19,5 @@ before_script:
 script:
 - vendor/bin/phpcs --standard=PSR2 . --ignore=vendor
 - vendor/bin/phpcpd . --exclude vendor
+notifications:
+  email: false
