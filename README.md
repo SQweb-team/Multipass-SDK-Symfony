@@ -13,7 +13,7 @@ We are unable to provide official support for earlier versions. For more informa
 
 ##Install
 
-**This package is intended for websites powered by Laravel, and advanced integrations.**
+**This package is intended for websites powered by Symfony.**
 
 If you're using WordPress, we've made it easy for you. Download the SQweb plugin [directly from WordPress.org](https://wordpress.org/plugins/sqweb/), or check out the source [here](https://github.com/SQweb-team/SQweb-WordPress-Plugin).
 
@@ -47,7 +47,7 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
         	message: ""
 	```
 
-Don't forget to replace `ID_SITE` by your `id_site` and `lang` accordingly.
+Don't forget to set your `id_site` and `lang` accordingly.
 
 For additional settings, see "[Options](#options)" below.
 

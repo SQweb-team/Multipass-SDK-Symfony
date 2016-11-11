@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8504c4dae8ee5ef761fa7d6f8fb45cf8",
-    "content-hash": "bade812c8a25110ded7be4601ea9905c",
+    "hash": "9802699d5c1fac2b5406c83608dc972f",
+    "content-hash": "08c5911a8f4f2c8ca3077264dcbea36c",
     "packages": [],
     "packages-dev": [
         {
@@ -191,27 +191,19 @@
         },
         {
             "name": "sebastian/version",
-            "version": "2.0.0",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/version.git",
-                "reference": "c829badbd8fdf16a0bad8aa7fa7971c029f1b9c5"
+                "reference": "58b3a85e7999757d6ad81c787a1fbf5ff6c628c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/c829badbd8fdf16a0bad8aa7fa7971c029f1b9c5",
-                "reference": "c829badbd8fdf16a0bad8aa7fa7971c029f1b9c5",
+                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/58b3a85e7999757d6ad81c787a1fbf5ff6c628c6",
+                "reference": "58b3a85e7999757d6ad81c787a1fbf5ff6c628c6",
                 "shasum": ""
             },
-            "require": {
-                "php": ">=5.6"
-            },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -230,7 +222,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2016-02-04 12:56:52"
+            "time": "2015-06-21 13:59:46"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -238,12 +230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "11d5cac9b8a778baead1712692dd0ad5633f43d5"
+                "reference": "aeeade9b38be8d2d64f0ca4e42d32ae34b353b07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/11d5cac9b8a778baead1712692dd0ad5633f43d5",
-                "reference": "11d5cac9b8a778baead1712692dd0ad5633f43d5",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/aeeade9b38be8d2d64f0ca4e42d32ae34b353b07",
+                "reference": "aeeade9b38be8d2d64f0ca4e42d32ae34b353b07",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +300,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-10-12 05:38:45"
+            "time": "2016-10-30 23:38:16"
         },
         {
             "name": "symfony/console",

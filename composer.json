@@ -25,6 +25,7 @@
     "target-dir" : "SQweb/SQwebBundle",
     "require-dev": {
         "squizlabs/php_codesniffer": "dev-master",
-        "sebastian/phpcpd": "^2.0"
+        "sebastian/phpcpd": "^2.0",
+        "sebastian/version": "1.0.6"
     }
 }
