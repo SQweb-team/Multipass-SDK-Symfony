@@ -85,6 +85,12 @@ Finally, use this code to display the Multipass button on your pages:
 {{ sqweb.button|raw }}
 ```
 
+If you want to use a smaller version of the Multipass button, you can by using this line:
+
+```php
+{{ sqweb.button_slim|raw }}
+```
+
 ###4. More functions
 
 
