@@ -23,6 +23,7 @@ class SQwebSQweb
         $this->script();
         $this->checkCredits();
         $this->button();
+        $this->buttonSlim();
     }
 
     /**
@@ -32,7 +33,7 @@ class SQwebSQweb
     {
         $this->script = '
 <script>
-	/* SDK SQweb Symfony 1.0 */
+	/* SDK SQweb Symfony 1.0.3 */
 	var _sqw = {
 	    id_site: '. $this->config['id_site'] .',
 	    debug: '. $this->config['debug'] .',
@@ -50,7 +51,12 @@ class SQwebSQweb
 
     private function button()
     {
-        $this->button = '<div class="sqweb-button-mp"><div class="sqw-btn-mp"></div></div>';
+        $this->button = '<div class="sqweb-button"></div>';
+    }
+
+    private function buttonSlim()
+    {
+        $this->buttonSlim = '<div class="sqweb-button multipass-slim"></div>';
     }
 
     private function checkCredits()
@@ -63,7 +69,7 @@ class SQwebSQweb
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CONNECTTIMEOUT_MS => 1000,
                 CURLOPT_TIMEOUT_MS => 1000,
-                CURLOPT_USERAGENT => 'SDK Symfony 1.0',
+                CURLOPT_USERAGENT => 'SDK Symfony 1.0.3',
                 CURLOPT_POSTFIELDS => [
                     'token' => $_COOKIE['sqw_z'],
                     'site_id' => $this->config['id_site'],

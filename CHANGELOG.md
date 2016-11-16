@@ -1,3 +1,7 @@
+### v1.0.3 - 2016-11-16
+
+* Added a smaller display of the Multipass button
+
 ### v1.0.2 - 2016-11-11
 
 * Fixed broken build on PHP 5.5.
