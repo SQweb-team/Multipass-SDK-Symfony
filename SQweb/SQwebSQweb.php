@@ -23,7 +23,7 @@ class SQwebSQweb
         $this->script();
         $this->checkCredits();
         $this->button();
-        $this->button_slim();
+        $this->buttonSlim();
     }
 
     /**
@@ -54,9 +54,9 @@ class SQwebSQweb
         $this->button = '<div class="sqweb-button"></div>';
     }
 
-    private function button_slim()
+    private function buttonSlim()
     {
-        $this->button_slim = '<div class="sqweb-button multipass-slim"></div>';
+        $this->buttonSlim = '<div class="sqweb-button multipass-slim"></div>';
     }
 
     private function checkCredits()
