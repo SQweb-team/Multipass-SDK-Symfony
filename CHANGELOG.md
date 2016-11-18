@@ -1,6 +1,10 @@
+### v1.0.4 - 2016-11-18
+
+* Fixed .xml issues.
+
 ### v1.0.3 - 2016-11-16
 
-* Added a smaller display of the Multipass button
+* Added a smaller display of the Multipass button.
 
 ### v1.0.2 - 2016-11-11
 
