@@ -10,32 +10,39 @@ class SQwebSQweb
     public $abo = 0;
     public $script = null;
     public $button = null;
+    public $buttonTiny = null;
+    public $buttonSlim = null;
+    public $buttonLarge = null;
 
     public function __construct(ContainerInterface $container)
     {
-        $this->config['id_site'] = $container->getParameter('id_site');
-        $this->config['debug'] = $container->getParameter('debug') ?: 'false';
-        $this->config['targeting'] = $container->getParameter('targeting') ?: 'false';
-        $this->config['beacon'] = $container->getParameter('beacon') ?: 'false';
-        $this->config['dwide'] = $container->getParameter('dwide') ?: 'false';
-        $this->config['lang'] = $container->getParameter('lang');
-        $this->config['message'] = $container->getParameter('message');
+        $this->config['id_site'] = $container->getParameter('SQW_ID_SITE');
+        $this->config['sitename'] = $container->getParameter('SQW_SITENAME');
+        $this->config['debug'] = $container->getParameter('SQW_DEBUG') ?: 'false';
+        $this->config['targeting'] = $container->getParameter('SQW_TARGETING') ?: 'false';
+        $this->config['beacon'] = $container->getParameter('SQW_BEACON') ?: 'false';
+        $this->config['dwide'] = $container->getParameter('SQW_DWIDE') ?: 'false';
+        $this->config['lang'] = $container->getParameter('SQW_LANG');
+        $this->config['message'] = $container->getParameter('SQW_MESSAGE');
         $this->script();
         $this->checkCredits();
         $this->button();
+        $this->buttonTiny();
         $this->buttonSlim();
+        $this->buttonLarge();
     }
 
     /**
-     * Ajoute le script SQweb
+     * Add the SQweb script
      */
     private function script()
     {
         $this->script = '
 <script>
-	/* SDK SQweb Symfony 1.0.3 */
+	/* SDK SQweb Symfony 1.1.0 */
 	var _sqw = {
 	    id_site: '. $this->config['id_site'] .',
+        sitename: '. $this->config['sitename'] .',
 	    debug: '. $this->config['debug'] .',
 	    targeting: '. $this->config['targeting'] .',
 	    beacon: '. $this->config['beacon'] .',
@@ -54,9 +61,19 @@ class SQwebSQweb
         $this->button = '<div class="sqweb-button"></div>';
     }
 
+    private function buttonTiny()
+    {
+        $this->buttonTiny = '<div class="sqweb-button multipass-tiny"></div>';
+    }
+
     private function buttonSlim()
     {
         $this->buttonSlim = '<div class="sqweb-button multipass-slim"></div>';
+    }
+
+    private function buttonLarge()
+    {
+        $this->buttonLarge = '<div class="sqweb-button multipass-large"></div>';
     }
 
     private function checkCredits()
@@ -102,6 +119,13 @@ class SQwebSQweb
         return $balise;
     }
 
+    /**
+     * Put opacity to your text
+     * Returns the text with opcaity style.
+     * @param text, which is your text.
+     * @param int percent which is the percent of your text you want to show.
+     * @return string
+     */
     public function transparent($text, $percent = 100)
     {
         if ($this->abo === 1 || $percent == 100 || empty($text)) {
@@ -142,6 +166,11 @@ class SQwebSQweb
         return $final;
     }
 
+    /**
+     * Limit the number of articles free users can read per day.
+     * @param $limitation int The number of articles a free user can see.
+     * @return bool
+     */
     public function limitArticle($limitation = 0)
     {
         if ($this->abo === 0 && $limitation != 0) {
@@ -171,6 +200,12 @@ class SQwebSQweb
         return (1 === preg_match('~^[1-9][0-9]*$~', $string));
     }
 
+    /**
+     * Display your premium content at a later date to non-paying users.
+     * @param  string  $date  When to publish the content on your site. It must be an ISO format(YYYY-MM-DD).
+     * @param  integer $wait  Days to wait before showing this content to free users.
+     * @return bool
+     */
     public function waitToDisplay($date, $wait = 0)
     {
         if ($wait == 0 || $this->abo === 1) {
