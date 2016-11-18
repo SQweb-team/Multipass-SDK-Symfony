@@ -16,14 +16,14 @@ class SQwebSQweb
 
     public function __construct(ContainerInterface $container)
     {
-        $this->config['id_site'] = $container->getParameter('SQW_ID_SITE');
-        $this->config['sitename'] = $container->getParameter('SQW_SITENAME');
-        $this->config['debug'] = $container->getParameter('SQW_DEBUG') ?: 'false';
-        $this->config['targeting'] = $container->getParameter('SQW_TARGETING') ?: 'false';
-        $this->config['beacon'] = $container->getParameter('SQW_BEACON') ?: 'false';
-        $this->config['dwide'] = $container->getParameter('SQW_DWIDE') ?: 'false';
-        $this->config['lang'] = $container->getParameter('SQW_LANG');
-        $this->config['message'] = $container->getParameter('SQW_MESSAGE');
+        $this->config['id_site'] = $container->getParameter('sqw_id_site');
+        $this->config['sitename'] = $container->getParameter('sqw_sitename');
+        $this->config['debug'] = $container->getParameter('sqw_debug') ?: 'false';
+        $this->config['targeting'] = $container->getParameter('sqw_targeting') ?: 'false';
+        $this->config['beacon'] = $container->getParameter('sqw_beacon') ?: 'false';
+        $this->config['dwide'] = $container->getParameter('sqw_dwide') ?: 'false';
+        $this->config['lang'] = $container->getParameter('sqw_lang');
+        $this->config['message'] = $container->getParameter('sqw_message');
         $this->script();
         $this->checkCredits();
         $this->button();

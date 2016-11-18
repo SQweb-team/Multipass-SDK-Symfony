@@ -22,13 +22,14 @@ class SQwebSQwebExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs)['config'];
 
-        $container->setParameter('id_site', $config['id_site']);
-        $container->setParameter('debug', $config['debug']);
-        $container->setParameter('targeting', $config['targeting']);
-        $container->setParameter('beacon', $config['beacon']);
-        $container->setParameter('dwide', $config['dwide']);
-        $container->setParameter('lang', $config['lang']);
-        $container->setParameter('message', $config['message']);
+        $container->setParameter('id_site', $config['sqw_id_site']);
+        $container->setParameter('sitename', $config['sqw_message']);
+        $container->setParameter('debug', $config['sqw_debug']);
+        $container->setParameter('targeting', $config['sqw_targeting']);
+        $container->setParameter('beacon', $config['sqw_beacon']);
+        $container->setParameter('dwide', $config['sqw_dwide']);
+        $container->setParameter('lang', $config['sqw_lang']);
+        $container->setParameter('message', $config['sqw_message']);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
