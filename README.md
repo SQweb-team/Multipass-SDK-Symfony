@@ -38,17 +38,17 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 	# SQweb Configuration
 	s_qweb_s_qweb:
     	config:
-        	sqw_id_site: ID_SITE
-        	sqw_sitename: website_name
-        	sqw_debug: false
-        	sqw_targeting: false
-        	sqw_beacon: false
-        	sqw_dwide: false
-        	sqw_lang: "en"
-        	sqw_message: ""
+        	id_site: ID_SITE
+        	sitename: "website_name"
+        	debug: false
+        	targeting: false
+        	beacon: false
+        	dwide: false
+        	lang: "en"
+        	message: ""
 	```
 
-**Don't forget to set your `sqw_id_site`, `sqw_sitename` and `sqw_lang` accordingly.**
+**Don't forget to set your `id_site`, `sitename` and `lang` accordingly.**
 
 For additional settings, see "[Options](#options)" below.
 
@@ -174,14 +174,14 @@ Unless otherwise noted, these options default to `false`. You can set them in yo
 
 |Option|Description
 |---|---|
-|`sqw_id_site`|Sets your website SQweb ID. Ex: 123456.|
-|`sqw_sitename`|The name that will appear on the large version of our button. You must set this variable.|
-|`sqw_message`|A custom message that will be shown to your adblockers. If using quotes, you must escape them.|
-|`sqw_targeting`|Only show the button to detected adblockers. Cannot be combined with the `beacon` mode.|
-|`sqw_beacon`|Monitor adblocking rates quietly, without showing a SQweb button or banner to the end users.|
-|`sqw_debug`|Output various messages to the browser console while the plugin executes.|
-|`sqw_dwide`|Set to `false` to only enable SQweb on the current domain. Defaults to `true`.|
-|`sqw_lang`|You may pick between `en` and `fr`.|
+|`id_site`|Sets your website SQweb ID. Ex: 123456.|
+|`sitename`|The name that will appear on the large version of our button. You must set this variable.|
+|`message`|A custom message that will be shown to your adblockers. If using quotes, you must escape them.|
+|`targeting`|Only show the button to detected adblockers. Cannot be combined with the `beacon` mode.|
+|`beacon`|Monitor adblocking rates quietly, without showing a SQweb button or banner to the end users.|
+|`debug`|Output various messages to the browser console while the plugin executes.|
+|`dwide`|Set to `false` to only enable SQweb on the current domain. Defaults to `true`.|
+|`lang`|You may pick between `en` and `fr`.|
 
 
 ##Contributing

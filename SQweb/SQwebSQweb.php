@@ -16,14 +16,14 @@ class SQwebSQweb
 
     public function __construct(ContainerInterface $container)
     {
-        $this->config['id_site'] = $container->getParameter('sqw_id_site');
-        $this->config['sitename'] = $container->getParameter('sqw_sitename');
-        $this->config['debug'] = $container->getParameter('sqw_debug') ?: 'false';
-        $this->config['targeting'] = $container->getParameter('sqw_targeting') ?: 'false';
-        $this->config['beacon'] = $container->getParameter('sqw_beacon') ?: 'false';
-        $this->config['dwide'] = $container->getParameter('sqw_dwide') ?: 'false';
-        $this->config['lang'] = $container->getParameter('sqw_lang');
-        $this->config['message'] = $container->getParameter('sqw_message');
+        $this->config['id_site'] = $container->getParameter('id_site');
+        $this->config['sitename'] = $container->getParameter('sitename');
+        $this->config['debug'] = $container->getParameter('debug') ?: 'false';
+        $this->config['targeting'] = $container->getParameter('targeting') ?: 'false';
+        $this->config['beacon'] = $container->getParameter('beacon') ?: 'false';
+        $this->config['dwide'] = $container->getParameter('dwide') ?: 'false';
+        $this->config['lang'] = $container->getParameter('lang');
+        $this->config['message'] = $container->getParameter('message');
         $this->script();
         $this->checkCredits();
         $this->button();
@@ -79,7 +79,7 @@ class SQwebSQweb
     private function checkCredits()
     {
         $response = null;
-        if (isset($_COOKIE['sqw_z']) && null !== $this->config['id_site']) {
+        if (isset($_COOKIE['z']) && null !== $this->config['id_site']) {
             $curl = curl_init();
             curl_setopt_array($curl, [
                 CURLOPT_URL => 'https://api.sqweb.com/token/check',
@@ -88,7 +88,7 @@ class SQwebSQweb
                 CURLOPT_TIMEOUT_MS => 1000,
                 CURLOPT_USERAGENT => 'SDK Symfony 1.0.3',
                 CURLOPT_POSTFIELDS => [
-                    'token' => $_COOKIE['sqw_z'],
+                    'token' => $_COOKIE['z'],
                     'site_id' => $this->config['id_site'],
                 ],
             ]);
