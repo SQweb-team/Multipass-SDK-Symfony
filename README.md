@@ -96,6 +96,8 @@ OR
 {{ sqweb.buttonLarge|raw }}
 ```
 
+![Example Buttons](https://cdn.multipass.net/github/buttons@2x.png "Example Buttons")
+
 ###4. More functions
 
 
