@@ -23,6 +23,7 @@ class SQwebSQwebExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs)['config'];
 
         $container->setParameter('id_site', $config['id_site']);
+        $container->setParameter('sitename', $config['sitename']);
         $container->setParameter('debug', $config['debug']);
         $container->setParameter('targeting', $config['targeting']);
         $container->setParameter('beacon', $config['beacon']);

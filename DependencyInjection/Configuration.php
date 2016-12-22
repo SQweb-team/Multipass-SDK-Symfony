@@ -30,6 +30,7 @@ class Configuration implements ConfigurationInterface
                         ->booleanNode('dwide')->end()
                         ->scalarNode('lang')->end()
                         ->scalarNode('message')->end()
+                        ->scalarNode('sitename')->end()
                     ->end()
                 ->end() // twitter
             ->end()

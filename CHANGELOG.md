@@ -1,6 +1,13 @@
+### v1.1.0 - 2016-12-22
+
+* Added 'tiny' and 'large' options to display the Multipass button.
+* Added the necessary variable: sitename to our configuration file.
+* Normalized variables names with our other SDK.
+
 ### v1.0.4 - 2016-11-18
 
 * Fixed .xml issues.
+
 
 ### v1.0.3 - 2016-11-16
 
