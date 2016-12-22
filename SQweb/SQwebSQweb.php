@@ -79,16 +79,16 @@ class SQwebSQweb
     private function checkCredits()
     {
         $response = null;
-        if (isset($_COOKIE['z']) && null !== $this->config['id_site']) {
+        if (isset($_COOKIE['sqw_z']) && null !== $this->config['id_site']) {
             $curl = curl_init();
             curl_setopt_array($curl, [
                 CURLOPT_URL => 'https://api.sqweb.com/token/check',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CONNECTTIMEOUT_MS => 1000,
                 CURLOPT_TIMEOUT_MS => 1000,
-                CURLOPT_USERAGENT => 'SDK Symfony 1.0.3',
+                CURLOPT_USERAGENT => 'SDK Symfony 1.1.0',
                 CURLOPT_POSTFIELDS => [
-                    'token' => $_COOKIE['z'],
+                    'token' => $_COOKIE['sqw_z'],
                     'site_id' => $this->config['id_site'],
                 ],
             ]);
