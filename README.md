@@ -27,8 +27,8 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 2. Add in your `app/config/config.yml` after `# Twig configuration`
 
 	```yml
-		globals:
-        	sqweb: "@s_qweb_s_qweb.SQweb"
+	globals:
+		sqweb: "@s_qweb_s_qweb.SQweb"
 	```
 
 3. And at the end of your `config.yml` add :
@@ -36,15 +36,15 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 	```yml
 	# SQweb Configuration
 	s_qweb_s_qweb:
-    	config:
-        	id_site: ID_SITE
-        	sitename: "website_name"
-        	debug: false
-        	targeting: false
-        	beacon: false
-        	dwide: false
-        	lang: "en"
-        	message: ""
+		config:
+			id_site: ID_SITE
+			sitename: "website_name"
+			debug: false
+			targeting: false
+			beacon: false
+			dwide: false
+			lang: "en"
+			message: ""
 	```
 
 **Don't forget to set your `id_site`, `sitename` and `lang` accordingly.**
