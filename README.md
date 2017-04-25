@@ -20,32 +20,32 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 
 1. In your project root, execute `composer require sqweb/symfony_bundle`. Now, go to `app/AppKernel.php` and add this line to your bundles array:
 
-	```php
-	new SQweb\SQwebBundle\SQwebSQwebBundle()
-	```
+    ```php
+    new SQweb\SQwebBundle\SQwebSQwebBundle()
+    ```
 
 2. Add in your `app/config/config.yml` after `# Twig configuration`
 
-	```yml
-	globals:
-		sqweb: "@s_qweb_s_qweb.SQweb"
-	```
+    ```yml
+    globals:
+        sqweb: "@s_qweb_s_qweb.SQweb"
+    ```
 
 3. And at the end of your `config.yml` add :
 
-	```yml
-	# SQweb Configuration
-	s_qweb_s_qweb:
-		config:
-			id_site: ID_SITE
-			sitename: "website_name"
-			debug: false
-			targeting: false
-			beacon: false
-			dwide: false
-			lang: "en"
-			message: ""
-	```
+    ```yml
+    # SQweb Configuration
+    s_qweb_s_qweb:
+        config:
+            id_site: ID_SITE
+            sitename: "website_name"
+            debug: false
+            targeting: false
+            beacon: false
+            dwide: false
+            lang: "en"
+            message: ""
+    ```
 
 **Don't forget to set your `id_site`, `sitename` and `lang` accordingly.**
 
@@ -71,9 +71,9 @@ Use it like this:
 
 ```php
 {% if sqweb.abo %}
-	//CONTENT
+    //CONTENT
 {% else %}
-	//ADS
+    //ADS
 {% endif %}
 ```
 
@@ -142,9 +142,9 @@ Example:
 
 ```php
 {% if sqweb.waitToDisplay('2016-09-15', 2) %}
-	The content here will appear the 2016-09-17, 2 days after the publication date for non paying users.
+    The content here will appear the 2016-09-17, 2 days after the publication date for non paying users.
 {% else %}
-	Here you can display a message that free users will see while your article is not displayed
+    Here you can display a message that free users will see while your article is not displayed
 {% endif %}
 ```
 
@@ -162,9 +162,9 @@ For instance, if I want to display only 5 articles to free users:
 
 ```php
 {% if sqweb.limitArticle(5) %}
-	Put your content here
+    Put your content here
 {% else %}
-	Here you can display a message that free users will see while your article is not displayed
+    Here you can display a message that free users will see while your article is not displayed
 {% endif %}
 ```
 
