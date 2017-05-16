@@ -142,9 +142,9 @@ Example:
 
 ```php
 {% if sqweb.waitToDisplay('2016-09-15', 2) %}
-    The content here will appear the 2016-09-17, 2 days after the publication date for non paying users.
+    // The content here will appear the 2016-09-17, 2 days after the publication date for non paying users.
 {% else %}
-    Here you can display a message that free users will see while your article is not displayed
+    // Here you can display a message that free users will see while your article is not displayed
 {% endif %}
 ```
 
@@ -162,9 +162,9 @@ For instance, if I want to display only 5 articles to free users:
 
 ```php
 {% if sqweb.limitArticle(5) %}
-    Put your content here
+    // Put your content here
 {% else %}
-    Here you can display a message that free users will see while your article is not displayed
+    // Here you can display a message that free users will see while your article is not displayed
 {% endif %}
 ```
 
@@ -176,6 +176,7 @@ Unless otherwise noted, these options default to `false`. You can set them in yo
 |---|---|
 |`id_site`|Sets your website SQweb ID. Ex: 123456.|
 |`sitename`|The name that will appear on the large version of our button. You must set this variable.|
+|`blockers`|Automatically display the Multipass modal to detected adblockers.|
 |`message`|A custom message that will be shown to your adblockers. If using quotes, you must escape them.|
 |`targeting`|Only show the button to detected adblockers. Cannot be combined with the `beacon` mode.|
 |`beacon`|Monitor adblocking rates quietly, without showing a SQweb button or banner to the end users.|
