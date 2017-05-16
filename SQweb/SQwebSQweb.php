@@ -51,7 +51,7 @@ class SQwebSQweb
 	    msg: "'. $this->config['message'] .'"};
 	var script = document.createElement("script");
 	script.type = "text/javascript";
-	script.src = "https://cdn.sqweb.com/sqweb.js";
+	script.src = "https://cdn.multipass.net/multipass.js";
 	document.getElementsByTagName("head")[0].appendChild(script);
 </script>';
     }
@@ -82,7 +82,7 @@ class SQwebSQweb
         if (isset($_COOKIE['sqw_z']) && null !== $this->config['id_site']) {
             $curl = curl_init();
             curl_setopt_array($curl, [
-                CURLOPT_URL => 'https://api.sqweb.com/token/check',
+                CURLOPT_URL => 'https://api.multipass.net/token/check',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CONNECTTIMEOUT_MS => 1000,
                 CURLOPT_TIMEOUT_MS => 1000,
