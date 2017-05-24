@@ -5,6 +5,9 @@
     "authors" : [{
         "name" : "Nicolas Verdonck",
         "email" : "nicolas@sqweb.com"
+    }, {
+        "name" : "Mathieu Darrigade",
+        "email" : "mathieu@sqweb.com"
     }],
     "keywords" : [
         "sqweb",
