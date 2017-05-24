@@ -1,4 +1,5 @@
-# Changelog
+## v1.1.1 - 2017-05-24
+* Fixed a bug impacting the script method.
 
 ## v1.1.0 - 2017-05-17
 
