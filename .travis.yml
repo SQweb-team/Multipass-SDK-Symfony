@@ -1,23 +1,42 @@
 language:
-- php
+  - php
+
 php:
-- 5.5
-- 5.6
-- 7.0
-- hhvm
+  - 5.5
+  - 5.6
+  - 7.0
+  - hhvm
+
 matrix:
   allow_failures:
   - php: hhvm
+
 cache:
   directories:
   - vendor
+
 before_script:
-- composer self-update
-- composer install
-- phpenv rehash
-- vendor/bin/phpcs -i
+  - composer self-update
+  - composer install
+  - phpenv rehash
+  - vendor/bin/phpcs -i
+
 script:
-- vendor/bin/phpcs --standard=PSR2 . --ignore=vendor
-- vendor/bin/phpcpd . --exclude vendor
+  - vendor/bin/phpcs --standard=PSR2 . --ignore=vendor
+  - vendor/bin/phpcpd . --exclude vendor
+
 notifications:
   email: false
+
+deploy:
+  provider: releases
+  api_key:
+    secure: Fyc91pLY/SYofnEWMQyj1K6lxyPa9gZOg5lsKtBjMXhyCo7BQpkLdehMLGQigRDw2BpKz//V9bJBMJjUuvSyMHGrfoamd4XMbJmE0d2479BY1yW1FrWI5YFX1SPmHXCphSnuPRQh7wMEMB4s+59nNlTf4hy84S4y/C+ZVIiuqXqffpDtNMvQ1ERlBr1galK63gfuZkaar2yqEsCxxALGgZE5haC8l2ri2992TY+79mS3fEgX2Iiu9MS0mU/rfyRiRzSS5d5k1zx+xpGyq1gH+Nuar6yPgATq4bOvj0+uAtDi+mW9d0TpHan6y406hO/2mxlP6mu7i4BJPxE5Lpl02+MEdktw2635NKZQ1k0xpEWSjLqy6mrjVShC3IG8ZmX7q664ETM1nZpKAOqqPSicxqi6I61M+qlGnC9pwQOgXOqr4bznfZLRr5tPuW6zDdYgZYNy3lYF2QeJH3lnP+IBUm5CnsR90dkz1ZXY44sABczye9JaJ8/lytQCp1PalLsDC5NNT8oKTgymT2gaEjCRciasrVh+ZkO2sVL/NoboFDL+f7yFyF8NPLPImU3V5kGAQ65SOsjb+f6ZeksEUtBl0uWE4GVnFMEcAFFnLg617twI8skQsd5BPg/Fu7/N3CBgHEigTjyForGPGd2uZGKvEVkSRrG8Qw5q6y+KtCJPdgE=
+  file: CHANGELOG.md
+  on:
+    repo: SQweb-team/SQweb-SDK-Symfony
+    tags: true
+    php: 7.0
+
+after_deploy:
+  - "./after_deploy.sh"
