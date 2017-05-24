@@ -39,7 +39,7 @@ class SQwebSQweb
     {
         $this->script = '
 <script>
-	/* SDK SQweb Symfony 1.1.0 */
+	/* SDK SQweb Symfony 1.1.1 */
 	var _sqw = {
 	    id_site: '. $this->config['id_site'] .',
         sitename: "'. $this->config['sitename'] .'",
