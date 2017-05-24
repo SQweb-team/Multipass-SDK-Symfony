@@ -1,3 +1,6 @@
+### v1.1.1 - 2017-05-24
+* Fixed a bug impacting the script method.
+
 ### v1.1.0 - 2016-11-18
 
 * Added 'tiny' and 'large' options to display the Multipass button.

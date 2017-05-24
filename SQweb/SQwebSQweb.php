@@ -42,7 +42,7 @@ class SQwebSQweb
 	/* SDK SQweb Symfony 1.1.0 */
 	var _sqw = {
 	    id_site: '. $this->config['id_site'] .',
-        sitename: '. $this->config['sitename'] .',
+        sitename: "'. $this->config['sitename'] .'",
 	    debug: '. $this->config['debug'] .',
 	    targeting: '. $this->config['targeting'] .',
 	    beacon: '. $this->config['beacon'] .',
