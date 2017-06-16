@@ -75,13 +75,14 @@ class SQwebSQweb
                 break;
 
             default:
+                $href = 'https://www.multipass.net/en/premium-partners-website-without-ads-nor-restriction';
                 $wording = array(
                     'warning'       => 'The rest of this article is restricted.',
                     'already_sub'   => 'Already a member? ',
                     'login'         => 'Sign in',
                     'unlock'        => 'Unlock this content, get your ',
                     'desc'          => 'Multipass is a multisite subscription, with no commitment.',
-                    'href'          => 'https://www.multipass.net/en/premium-partners-website-without-ads-nor-restriction',
+                    'href'          => $href,
                     'discover'      => 'Discover all the partners'
                 );
                 break;
@@ -90,14 +91,22 @@ class SQwebSQweb
             <div class="footer__mp__normalize footer__mp__button_container">
                 <div class="footer__mp__button_header">
                     <div class="footer__mp__button_header_title">' . $wording['warning'] . '</div>
-                    <div onclick="sqw.modal_first()" class="footer__mp__button_signin">' . $wording['already_sub'] . '<span class="footer__mp__button_login footer__mp__button_strong">' . $wording['login'] . '</span></div>
+                    <div onclick="sqw.modal_first()" class="footer__mp__button_signin">'
+                    . $wording['already_sub']
+                    . '<span class="footer__mp__button_login footer__mp__button_strong">'
+                    . $wording['login']
+                    . '</span></div>
                 </div>
                 <div onclick="sqw.modal_first()" class="footer__mp__normalize footer__mp__button_cta">
                     <a href="#" class="footer__mp__cta_fresh">' . $wording['unlock'] . '</a>
                 </div>
                 <div class="footer__mp__normalize footer__mp__button_footer">
                     <p class="footer__mp__normalize footer__mp__button_p">' . $wording['desc'] . '</p>
-                    <a target="_blank" class="footer__mp__button_discover footer__mp__button_strong" href="' . $wording['href'] . '"><span>></span> <span class="footer__mp__button_footer_txt">' . $wording['discover'] . '</span></a>
+                    <a target="_blank" class="footer__mp__button_discover footer__mp__button_strong" href="'
+                    . $wording['href']
+                    . '"><span>></span> <span class="footer__mp__button_footer_txt">'
+                    . $wording['discover']
+                    . '</span></a>
                 </div>
             </div>';
     }
