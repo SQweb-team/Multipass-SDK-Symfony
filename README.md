@@ -115,6 +115,32 @@ For instance:
 
 Will display the block.
 
+#### Display a locking div for your users
+```php
+/**
+ * Display a locking block.
+ */
+
+function lockingBlock() {   }
+``
+
+For instance:
+
+```php
+{{sqweb.lockingBlock|raw}}
+```
+
+Will display the block.
+We recommand you to use it in combination with our other limiting fuctions, like this:
+```php
+{% if sqweb.waitToDisplay('2016-09-15', 2) %}
+    // The content here will appear the 2016-09-17, 2 days after the publication date for non paying users.
+{% else %}
+    // Here you can display a message that free users will see while your article is not displayed
+    {{sqweb.lockingBlock|raw}}
+{% endif %}
+```
+
 #### Display only a part of your content to non premium users
 
 ```php

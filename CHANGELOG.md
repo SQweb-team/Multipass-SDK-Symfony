@@ -1,6 +1,7 @@
 ### v1.1.2 - 2017-06-09
 
 * Implemented a function to display a supporting footer div.
+* Implemented a function to display a locking footer div.
 
 ### v1.1.1 - 2017-05-24
 
