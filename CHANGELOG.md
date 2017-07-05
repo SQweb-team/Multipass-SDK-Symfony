@@ -1,3 +1,7 @@
+### v1.1.3 - 2017-07-05
+
+* Replaced the supporting footer with a "Support us" message.
+
 ### v1.1.2 - 2017-06-09
 
 * Implemented a function to display a supporting footer div.
