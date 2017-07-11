@@ -1,3 +1,7 @@
+### v1.1.4 - 2017-07-11
+
+* Prefixed css classes.
+
 ### v1.1.3 - 2017-07-05
 
 * Replaced the supporting footer with a "Support us" message.
