@@ -27,12 +27,14 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 2. Add in your `app/config/config.yml` after `# Twig configuration`
 
     ```yml
-    globals:
-        sqweb: "@s_qweb_s_qweb.SQweb"
+    twig:
+	    globals:
+   	    	sqweb: "@s_qweb_s_qweb.SQweb"
     ```
 
 3. And at the end of your `config.yml` add :
-```yml
+
+	```yml
     # SQweb Configuration
     s_qweb_s_qweb:
         config:
@@ -44,6 +46,15 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
             dwide: false
             lang: "en"
             message: ""
+			login: ""
+			support: ""
+			connected: ""
+			btn_noads: ""
+			login_tiny: ""
+			connected_s: ""
+			btn_unlimited: ""
+			connected_tiny: ""
+			connected_support: ""
 ```
 
 **Don't forget to set your `id_site`, `sitename` and `lang` accordingly.**
@@ -76,7 +87,7 @@ Use it like this:
 {% endif %}
 ```
 
-### 3. Showing the Multipass button
+### 3. a) Showing the Multipass button
 
 Finally, use this code to display the Multipass button on your pages:
 
@@ -95,6 +106,31 @@ OR
 ```
 
 ![Example Buttons](https://cdn.multipass.net/github/buttons@2x.png "Example Buttons")
+
+### 3. b) Customizing the Multipass button
+
+If you want to customize our different type of button, edit the following in your `config.yaml` file.  
+
+For instance:  
+
+```yml
+# SQweb Configuration
+s_qweb_s_qweb:
+    config:
+		...
+		login:"Hello world"
+		...
+```
+Will display `Hello world` instead of `Premium with Multipass` on the regular button for logged out visitors.
+
+
+|Button Model|Logged in|Logged out
+|---|:---:|:---:|
+|Tiny|`connected_tiny`|`login_tiny`|
+|Regular|`connected`|`login`|
+|Large - before black dot| N / A | `btn_unlimited`|
+|Large - after black dot| N / A | `btn_noads`|
+|Large connected| `connected_s` | N / A|
 
 ### 4. More functions
 

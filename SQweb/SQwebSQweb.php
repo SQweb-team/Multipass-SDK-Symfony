@@ -15,17 +15,33 @@ class SQwebSQweb
     public $buttonTiny = null;
     public $buttonSlim = null;
     public $buttonLarge = null;
+    public $buttonSupport = null;
 
     public function __construct(ContainerInterface $container)
     {
-        $this->config['id_site'] = $container->getParameter('id_site');
-        $this->config['sitename'] = $container->getParameter('sitename');
-        $this->config['debug'] = $container->getParameter('debug') ?: 'false';
-        $this->config['targeting'] = $container->getParameter('targeting') ?: 'false';
-        $this->config['beacon'] = $container->getParameter('beacon') ?: 'false';
-        $this->config['dwide'] = $container->getParameter('dwide') ?: 'false';
-        $this->config['lang'] = $container->getParameter('lang');
-        $this->config['message'] = $container->getParameter('message');
+        $this->config['id_site']    = $container->getParameter('id_site');
+        $this->config['sitename']   = $container->getParameter('sitename');
+        $this->config['debug']      = $container->getParameter('debug') ?: 'false';
+        $this->config['targeting']  = $container->getParameter('targeting') ?: 'false';
+        $this->config['beacon']     = $container->getParameter('beacon') ?: 'false';
+        $this->config['dwide']      = $container->getParameter('dwide') ?: 'false';
+        $this->config['lang']       = $container->getParameter('lang');
+        $this->config['message']    = $container->getParameter('message');
+
+        /* These following configs are for button customization */
+
+        $this->config['login']             = $container->getParameter('login');
+        $this->config['connected']         = $container->getParameter('connected');
+        $this->config['support']           = $container->getParameter('support');
+        $this->config['btn_noads']         = $container->getParameter('btn_noads');
+        $this->config['login_tiny']        = $container->getParameter('login_tiny');
+        $this->config['connected_s']       = $container->getParameter('connected_s');
+        $this->config['btn_unlimited']     = $container->getParameter('btn_unlimited');
+        $this->config['connected_tiny']    = $container->getParameter('connected_tiny');
+        $this->config['connected_support'] = $container->getParameter('connected_support');
+
+        /* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
         $this->script();
         $this->checkCredits();
         $this->supportBlock();
@@ -34,6 +50,7 @@ class SQwebSQweb
         $this->buttonTiny();
         $this->buttonSlim();
         $this->buttonLarge();
+        $this->buttonSupport();
     }
 
     /**
@@ -43,7 +60,7 @@ class SQwebSQweb
     {
         $this->script = '
 <script>
-	/* SDK SQweb Symfony 1.1.2 */
+	/* SDK SQweb Symfony 1.2.0 */
 	var _sqw = {
 	    id_site: '. $this->config['id_site'] .',
         sitename: "'. $this->config['sitename'] .'",
@@ -52,7 +69,17 @@ class SQwebSQweb
 	    beacon: '. $this->config['beacon'] .',
 	    dwide: '. $this->config['dwide'] .',
 	    i18n: "'. $this->config['lang'] .'",
-	    msg: "'. $this->config['message'] .'"};
+	    msg: "'. $this->config['message'] .'",
+        login: "' . $this->config['login'] . '",
+        connected: "' . $this->config['connected'] . '",
+        support: "' . $this->config['support'] . '",
+        btn_noads: "' . $this->config['btn_noads'] . '",
+        login_tiny: "' . $this->config['login_tiny'] . '",
+        connected_s: "' . $this->config['connected_s'] . '",
+        connected_support: "' . $this->config['connected_support'] . '",
+        btn_unlimited: "' . $this->config['btn_unlimited'] . '",
+        connected_tiny: "' . $this->config['connected_tiny'] . '"
+    };
 	var script = document.createElement("script");
 	script.type = "text/javascript";
 	script.src = "https://cdn.multipass.net/multipass.js";
@@ -100,8 +127,7 @@ class SQwebSQweb
                 $wording = array(
                     'title'         => 'Continue reading...',
                     'sentence_1'    => '... we need you to hear this: More people are reading our website than ever but
-                         advertising revenues across the media are falling fast. We need you to hear this: More people
-                         are reading our website than ever but advertising revenues across the media are falling fast.',
+                         advertising revenues across the media are falling fast.',
                     'sentence_2'    => ' We want to keep our content as open as we can. We are independent,
                          and our quality work takes a lot of time, money and hard work to produce. ',
                     'sentence_3'    => 'You can support us with Multipass which enables you to pay for a bundle of
@@ -112,16 +138,16 @@ class SQwebSQweb
         }
 
         return '
-            <div class="sqw-article-footer-container">
-                <div class="sqw-article-footer-body">
-                    <div class="sqw-article-footer-body-title">' . $wording['title'] . '</div>
-                    <div class="sqw-article-footer-body-content1">' . $wording['sentence_1'] .'</div>
-                    <div class="sqw-article-footer-body-content2">' . $wording['sentence_2'] . '</div>
-                    <div class="sqw-article-footer-body-content3">' . $wording['sentence_3'] . '</div>
+            <div class="article-footer-container">
+                <div class="article-footer-body">
+                    <div class="article-footer-body-title">' . $wording['title'] . '</div>
+                    <div class="article-footer-body-content1">' . $wording['sentence_1'] .'</div>
+                    <div class="article-footer-body-content2">' . $wording['sentence_2'] . '</div>
+                    <div class="article-footer-body-content3">' . $wording['sentence_3'] . '</div>
                 </div>
-                <div onclick="sqw.modal_first()" class="sqw-article-footer-footer">
-                    <div class="sqw-article-footer-footer-text">' . $wording['support'] . '</div>
-                    <div class="sqw-article-footer-footer-logo-container"></div>
+                <div onclick="sqw.modal_first()" class="article-footer-footer">
+                    <div class="article-footer-footer-text">' . $wording['support'] . '</div>
+                    <div class="article-footer-footer-logo-container"></div>
                 </div>
             </div>
         ';
@@ -240,6 +266,11 @@ class SQwebSQweb
         $this->buttonLarge = '<div class="sqweb-button multipass-large"></div>';
     }
 
+    private function buttonSupport()
+    {
+        $this->buttonSupport = '<div class="sqweb-button-support"></div>';
+    }
+
     private function checkCredits()
     {
         $response = null;
@@ -250,7 +281,7 @@ class SQwebSQweb
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CONNECTTIMEOUT_MS => 1000,
                 CURLOPT_TIMEOUT_MS => 1000,
-                CURLOPT_USERAGENT => 'SDK Symfony 1.1.4',
+                CURLOPT_USERAGENT => 'SDK Symfony 1.2.0',
                 CURLOPT_POSTFIELDS => [
                     'token' => $_COOKIE['z'],
                     'site_id' => $this->config['id_site'],

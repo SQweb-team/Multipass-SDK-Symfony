@@ -1,6 +1,7 @@
-### v1.1.4 - 2017-07-11
+### v1.2.0 - 2017-11-06
 
-* Prefixed css classes.
+* Implemented a 'Support us' version of our login button.
+* Made all our loggin button's text customizable.
 
 ### v1.1.3 - 2017-07-05
 
