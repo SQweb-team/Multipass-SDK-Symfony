@@ -17,6 +17,10 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
+        // Here you should define the parameters that are allowed to
+        // configure your bundle. See the documentation linked above for
+        // more information on that topic.
+
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('s_qweb_s_qweb');
         $rootNode
@@ -31,14 +35,19 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('lang')->end()
                         ->scalarNode('message')->end()
                         ->scalarNode('sitename')->end()
+                        ->scalarNode('login')->end()
+                        ->scalarNode('connected')->end()
+                        ->scalarNode('support')->end()
+                        ->scalarNode('btn_noads')->end()
+                        ->scalarNode('login_tiny')->end()
+                        ->scalarNode('connected_s')->end()
+                        ->scalarNode('connected_support')->end()
+                        ->scalarNode('btn_unlimited')->end()
+                        ->scalarNode('connected_tiny')->end()
                     ->end()
                 ->end() // twitter
             ->end()
         ;
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
-
         return $treeBuilder;
     }
 }

@@ -31,6 +31,20 @@ class SQwebSQwebExtension extends Extension
         $container->setParameter('lang', $config['lang']);
         $container->setParameter('message', $config['message']);
 
+        /* These following configs are for button customization */
+
+        $container->setParameter('login', $config['login']);
+        $container->setParameter('connected', $config['connected']);
+        $container->setParameter('support', $config['support']);
+        $container->setParameter('btn_noads', $config['btn_noads']);
+        $container->setParameter('login_tiny', $config['login_tiny']);
+        $container->setParameter('connected_s', $config['connected_s']);
+        $container->setParameter('btn_unlimited', $config['btn_unlimited']);
+        $container->setParameter('connected_tiny', $config['connected_tiny']);
+        $container->setParameter('connected_support', $config['connected_support']);
+
+        /* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
     }
