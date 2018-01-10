@@ -17,10 +17,12 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
-
+        /*
+         * Here you should define the parameters that are allowed to
+         * configure your bundle. See the documentation linked above for
+         * more information on that topic.
+         */
+        // TODO: set description to each variable with ->info('description');
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('s_qweb_s_qweb');
         $rootNode

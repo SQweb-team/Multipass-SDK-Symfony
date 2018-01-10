@@ -20,7 +20,7 @@ class SQwebSQwebExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs)['config'];
+        $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('id_site', $config['id_site']);
         $container->setParameter('sitename', $config['sitename']);
