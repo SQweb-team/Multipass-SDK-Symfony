@@ -21,7 +21,7 @@ class SQwebSQwebExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-        dump($config);
+        var_dump($config);
 
         $container->setParameter('id_site', $config['id_site']);
         $container->setParameter('sitename', $config['sitename']);
