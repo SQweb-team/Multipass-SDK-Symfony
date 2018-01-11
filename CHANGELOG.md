@@ -1,3 +1,9 @@
+## v1.3.0 - 2018-01-11
+
+* Implemented auto login.
+* Reworked script method.
+* Reworked how locales are handled.
+
 ## v1.2.1 - 2017-11-20
 
 * Now passing click event when opening iframe.
