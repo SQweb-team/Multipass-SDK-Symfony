@@ -12,13 +12,15 @@
     "keywords" : [
         "sqweb",
         "paywall",
-        "subscription"
+        "subscription",
+        "multipass"
     ],
     "license" : [
         "MIT"
     ],
     "require" : {
-        "php": ">=5.5.0"
+        "php": ">=5.5.0",
+        "twig/twig": "^2.0"
     },
     "autoload" : {
         "psr-0" : {

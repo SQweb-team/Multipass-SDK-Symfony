@@ -16,7 +16,7 @@ We are unable to provide official support for earlier versions. For more informa
 
 If you're using WordPress, we've made it easy for you. Download the SQweb plugin [directly from WordPress.org](https://wordpress.org/plugins/sqweb/), or check out the source [here](https://github.com/SQweb-team/SQweb-WordPress-Plugin).
 
-### Using Composer
+### Using Symfony 3.x
 
 1. In your project root, execute `composer require sqweb/symfony_bundle`. Now, go to `app/AppKernel.php` and add this line to your bundles array:
 
@@ -26,7 +26,7 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 
 2. Add in your `app/config/config.yml` after `# Twig configuration`
 
-    ```yml
+    ```
     twig:
 	    globals:
    	    	sqweb: "@s_qweb_s_qweb.SQweb"
@@ -34,32 +34,75 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 
 3. And at the end of your `config.yml` add :
 
-	```yml
-    # SQweb Configuration
-    s_qweb_s_qweb:
-        config:
-            id_site: ID_SITE
-            sitename: "website_name"
-            debug: false
-            targeting: false
-            beacon: false
-            dwide: false
-            lang: "en"
-            message: ""
-			login: ""
-			support: ""
-			connected: ""
-			btn_noads: ""
-			login_tiny: ""
-			connected_s: ""
-			btn_unlimited: ""
-			connected_tiny: ""
-			connected_support: ""
-```
+	```
+	# SQweb | Multipass Configuration
+	s_qweb_s_qweb:
+	  config:
+	    id_site: 00000
+	    sitename: "website_name"
+	    debug: false
+	    targeting: false
+	    beacon: false
+	    dwide: false
+	    autologin: true
+	    lang: "en_US"
+	    message: ""
+	    login: ""
+	    support: ""
+	    connected: ""
+	    btn_noads: ""
+	    login_tiny: ""
+	    connected_s: ""
+	    btn_unlimited: ""
+	    connected_tiny: ""
+	    connected_support: ""
+	```
 
 **Don't forget to set your `id_site`, `sitename` and `lang` accordingly.**
 
 For additional settings, see "[Options](#options)" below.
+
+### Using Symfony 4.x
+
+1. Be sure you are using the twig bundle, if not, execute the following command in your project root: `composer require twig`
+
+2. Now go to `packages/twig.yaml` and copy paste the following piece of code. Be sure to use your real id_site on this line: `id_site: 00000` and replace `"website_name"` with your actual website name.
+	
+	```
+	twig:
+	   [...]
+	    
+		globals:
+	  	  sqweb: "@s_qweb_s_qweb.SQweb"
+		
+	# SQweb | Multipass Configuration
+	s_qweb_s_qweb:
+	  config:
+	    id_site: 00000
+	    sitename: "website_name"
+	    debug: false
+	    targeting: false
+	    beacon: false
+	    dwide: false
+	    autologin: true
+	    lang: "en_US"
+	    message: ""
+	    login: ""
+	    support: ""
+	    connected: ""
+	    btn_noads: ""
+	    login_tiny: ""
+	    connected_s: ""
+	    btn_unlimited: ""
+	    connected_tiny: ""
+	    connected_support: ""
+	```
+
+	**Don't forget to set your `id_site`, `sitename` and `lang` accordingly.**
+	
+	For additional settings, see "[Options](#options)" below.
+
+3. In your project roo t,  execute `composer require sqweb/symfony_bundle`. 
 
 ## Usage
 
@@ -109,9 +152,9 @@ OR
 
 ### 3. b) Customizing the Multipass button
 
-If you want to customize our different type of button, edit the following in your `config.yaml` file.  
+If you want to customize our different type of button, edit the following in your `config.yaml` file.
 
-For instance:  
+For instance:
 
 ```yml
 # SQweb Configuration
@@ -260,7 +303,8 @@ Unless otherwise noted, these options default to `false`. You can set them in yo
 |`beacon`|Monitor adblocking rates quietly, without showing a SQweb button or banner to the end users.|
 |`debug`|Output various messages to the browser console while the plugin executes.|
 |`dwide`|Set to `false` to only enable SQweb on the current domain. Defaults to `true`.|
-|`lang`|You may pick between `en` and `fr`.|
+|`lang`|You may pick between `en_US`, and `fr_FR`.|
+|`autologin`|Automatically login Multipass users on your website.|
 
 ## Contributing
 

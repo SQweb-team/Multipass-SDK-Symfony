@@ -30,6 +30,7 @@ class SQwebSQwebExtension extends Extension
         $container->setParameter('dwide', $config['dwide']);
         $container->setParameter('lang', $config['lang']);
         $container->setParameter('message', $config['message']);
+        $container->setParameter('autologin', $config['autologin']);
 
         /* These following configs are for button customization */
 
