@@ -16,7 +16,7 @@ We are unable to provide official support for earlier versions. For more informa
 
 If you're using WordPress, we've made it easy for you. Download the SQweb plugin [directly from WordPress.org](https://wordpress.org/plugins/sqweb/), or check out the source [here](https://github.com/SQweb-team/SQweb-WordPress-Plugin).
 
-### Using Composer
+### Using Symfony 3.x
 
 1. In your project root, execute `composer require sqweb/symfony_bundle`. Now, go to `app/AppKernel.php` and add this line to your bundles array:
 
@@ -61,6 +61,10 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 **Don't forget to set your `id_site`, `sitename` and `lang` accordingly.**
 
 For additional settings, see "[Options](#options)" below.
+
+### Using Symfony 4.x
+
+1. Open `a`
 
 ## Usage
 
