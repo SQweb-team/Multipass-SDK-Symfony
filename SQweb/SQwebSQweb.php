@@ -83,8 +83,11 @@ class SQwebSQweb
             ),
         ));
 
-        $this->script  = '<script src="https://cdn.multipass.net/mltpss.min.js" type="text/javascript"></script>' . PHP_EOL;
-        $this->script .= "<script>/* SDK SQweb Symfony 1.3.0 */ var mltpss = new Multipass.default($settings);</script>";
+        $this->script  = '<script src="https://cdn.multipass.net/mltpss.min.js" type="text/javascript"></script>'
+        . PHP_EOL;
+
+        $this->script .= "<script>/* SDK SQweb Symfony 1.3.0 */
+        var mltpss = new Multipass.default($settings);</script>";
     }
 
     /*
