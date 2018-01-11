@@ -20,10 +20,7 @@ class SQwebSQwebExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
-        var_dump($configuration);
-        var_dump($configs);
-        var_dump($config);
+        $config = $this->processConfiguration($configuration, $configs)['config'];
 
         $container->setParameter('id_site', $config['id_site']);
         $container->setParameter('sitename', $config['sitename']);
@@ -33,6 +30,7 @@ class SQwebSQwebExtension extends Extension
         $container->setParameter('dwide', $config['dwide']);
         $container->setParameter('lang', $config['lang']);
         $container->setParameter('message', $config['message']);
+        $container->setParameter('autologin', $config['autologin']);
 
         /* These following configs are for button customization */
 

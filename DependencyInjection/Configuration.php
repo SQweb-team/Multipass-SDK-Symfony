@@ -34,6 +34,7 @@ class Configuration implements ConfigurationInterface
                         ->booleanNode('targeting')->end()
                         ->booleanNode('beacon')->end()
                         ->booleanNode('dwide')->end()
+                        ->booleanNode('autologin')->end()
                         ->scalarNode('lang')->end()
                         ->scalarNode('message')->end()
                         ->scalarNode('sitename')->end()

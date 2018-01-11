@@ -27,6 +27,7 @@ class SQwebSQweb
         $this->config['dwide']      = $container->getParameter('dwide') ?: 'false';
         $this->config['lang']       = $container->getParameter('lang');
         $this->config['message']    = $container->getParameter('message');
+        $this->config['autologin']  = $container->getParameter('autologin');
 
         /* These following configs are for button customization */
 
@@ -58,33 +59,32 @@ class SQwebSQweb
      */
     private function script()
     {
-        $this->script = '
-<script>
-	/* SDK SQweb Symfony 1.2.1 */
-	var _sqw = {
-	    id_site: '. $this->config['id_site'] .',
-        sitename: "'. $this->config['sitename'] .'",
-	    debug: '. $this->config['debug'] .',
-	    targeting: '. $this->config['targeting'] .',
-	    beacon: '. $this->config['beacon'] .',
-	    dwide: '. $this->config['dwide'] .',
-	    i18n: "'. $this->config['lang'] .'",
-	    msg: "'. $this->config['message'] .'",
-        login: "' . $this->config['login'] . '",
-        connected: "' . $this->config['connected'] . '",
-        support: "' . $this->config['support'] . '",
-        btn_noads: "' . $this->config['btn_noads'] . '",
-        login_tiny: "' . $this->config['login_tiny'] . '",
-        connected_s: "' . $this->config['connected_s'] . '",
-        connected_support: "' . $this->config['connected_support'] . '",
-        btn_unlimited: "' . $this->config['btn_unlimited'] . '",
-        connected_tiny: "' . $this->config['connected_tiny'] . '"
-    };
-	var script = document.createElement("script");
-	script.type = "text/javascript";
-	script.src = "https://cdn.multipass.net/multipass.js";
-	document.getElementsByTagName("head")[0].appendChild(script);
-</script>';
+        $settings = json_encode(array(
+            'wsid' => $this->config['id_site'],
+            'sitename' => $this->config['sitename'],
+            'debug' => $this->config['debug'],
+            'targeting' => $this->config['targeting'],
+            'beacon' => $this->config['beacon'],
+            'dwide' => $this->config['dwide'],
+            'locale' => $this->config['lang'],
+            'msg' => $this->config['message'],
+            'autologin' => $this->config['autologin'],
+            // User's custom strings for button customization
+            'user_strings' => array(
+                'login' => $this->config['login'],
+                'login_tiny' => $this->config['login_tiny'],
+                'connected' => $this->config['connected'],
+                'connected_tiny' => $this->config['connected_tiny'],
+                'connected_s' => $this->config['connected_s'],
+                'connected_support' => $this->config['connected_support'],
+                'btn_unlimited' => $this->config['btn_unlimited'],
+                'btn_noads' => $this->config['btn_noads'],
+                'support' => $this->config['support'],
+            ),
+        ));
+
+        $this->script  = '<script src="https://cdn.multipass.net/mltpss.min.js" type="text/javascript"></script>' . PHP_EOL;
+        $this->script .= "<script>/* SDK SQweb Symfony 1.3.0 */ var mltpss = new Multipass.default($settings);</script>";
     }
 
     /*
@@ -145,7 +145,7 @@ class SQwebSQweb
                     <div class="article-footer-body-content2">' . $wording['sentence_2'] . '</div>
                     <div class="article-footer-body-content3">' . $wording['sentence_3'] . '</div>
                 </div>
-                <div onclick="sqw.modal_first(event)" class="article-footer-footer">
+                <div onclick="mltpss.modal_first(event)" class="article-footer-footer">
                     <div class="article-footer-footer-text">' . $wording['support'] . '</div>
                     <div class="article-footer-footer-logo-container"></div>
                 </div>
@@ -164,13 +164,13 @@ class SQwebSQweb
             <div class="footer__mp__normalize footer__mp__button_container sqw-paywall-button-container">
                 <div class="footer__mp__button_header">
                     <div class="footer__mp__button_header_title">' . $wording['warning'] . '</div>
-                    <div onclick="sqw.modal_first(event)" class="footer__mp__button_signin">'
+                    <div onclick="mltpss.modal_first(event)" class="footer__mp__button_signin">'
                     . $wording['already_sub']
                     . '<span class="footer__mp__button_login footer__mp__button_strong">'
                     . $wording['login']
                     . '</span></div>
                 </div>
-                <div onclick="sqw.modal_first(event)" class="footer__mp__normalize footer__mp__button_cta">
+                <div onclick="mltpss.modal_first(event)" class="footer__mp__normalize footer__mp__button_cta">
                     <a href="#" class="footer__mp__cta_fresh">' . $wording['unlock'] . '</a>
                 </div>
                 <div class="footer__mp__normalize footer__mp__button_footer">

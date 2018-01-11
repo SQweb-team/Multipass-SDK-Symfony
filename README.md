@@ -44,6 +44,7 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
             targeting: false
             beacon: false
             dwide: false
+            autologin: true
             lang: "en"
             message: ""
 			login: ""
@@ -109,9 +110,9 @@ OR
 
 ### 3. b) Customizing the Multipass button
 
-If you want to customize our different type of button, edit the following in your `config.yaml` file.  
+If you want to customize our different type of button, edit the following in your `config.yaml` file.
 
-For instance:  
+For instance:
 
 ```yml
 # SQweb Configuration
@@ -260,7 +261,8 @@ Unless otherwise noted, these options default to `false`. You can set them in yo
 |`beacon`|Monitor adblocking rates quietly, without showing a SQweb button or banner to the end users.|
 |`debug`|Output various messages to the browser console while the plugin executes.|
 |`dwide`|Set to `false` to only enable SQweb on the current domain. Defaults to `true`.|
-|`lang`|You may pick between `en` and `fr`.|
+|`lang`|You may pick between `en_US`, and `fr_FR`.|
+|`autologin`|Automatically login Multipass users on your website.|
 
 ## Contributing
 
