@@ -1,3 +1,7 @@
+## v1.3.1 - 2018-01-11
+
+* Renamed package from SQweb to Multipass
+
 ## v1.3.0 - 2018-01-11
 
 * Implemented auto login.

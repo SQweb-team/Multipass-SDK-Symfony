@@ -1,7 +1,8 @@
 {
-    "name" : "sqweb/symfony_bundle",
+    "name" : "mltpss/symfony-bundle",
     "description" : "SQweb package for Symfony users",
     "type" : "symfony-bundle",
+    "license": "GPL v3",
     "authors" : [{
         "name" : "Nicolas Verdonck",
         "email" : "nicolas@sqweb.com"
