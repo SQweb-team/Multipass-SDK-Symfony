@@ -31,6 +31,7 @@ class SQwebSQwebExtension extends Extension
         $container->setParameter('lang', $config['lang']);
         $container->setParameter('message', $config['message']);
         $container->setParameter('autologin', $config['autologin']);
+        $container->setParameter('tunnel', $config['tunnel']);
 
         /* These following configs are for button customization */
 
