@@ -1,3 +1,7 @@
+## v1.3.1 - 2018-03-05
+
+* Improved the way we log action on support button
+
 ## v1.3.0 - 2018-01-11
 
 * Implemented auto login.
