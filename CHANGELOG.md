@@ -1,6 +1,14 @@
-## v1.3.1 - 2018-03-05
+## v1.3.3 - 2018-03-05
 
 * Improved the way we log action on support button
+
+## v1.3.2 - 2018-01-11
+
+* Added a tunnel option
+
+## v1.3.1 - 2018-01-11
+
+* Renamed package from SQweb to Multipass
 
 ## v1.3.0 - 2018-01-11
 

@@ -18,7 +18,7 @@ If you're using WordPress, we've made it easy for you. Download the SQweb plugin
 
 ### Using Symfony 3.x
 
-1. In your project root, execute `composer require sqweb/symfony_bundle`. Now, go to `app/AppKernel.php` and add this line to your bundles array:
+1. In your project root, execute `composer require mltpss/symfony-bundle`. Now, go to `app/AppKernel.php` and add this line to your bundles array:
 
     ```php
     new SQweb\SQwebBundle\SQwebSQwebBundle()
@@ -102,7 +102,7 @@ For additional settings, see "[Options](#options)" below.
 	
 	For additional settings, see "[Options](#options)" below.
 
-3. In your project roo t,  execute `composer require sqweb/symfony_bundle`. 
+3. In your project root,  execute `composer require mltpss/symfony-bundle`. 
 
 ## Usage
 

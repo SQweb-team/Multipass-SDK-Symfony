@@ -28,6 +28,7 @@ class SQwebSQweb
         $this->config['lang']       = $container->getParameter('lang');
         $this->config['message']    = $container->getParameter('message');
         $this->config['autologin']  = $container->getParameter('autologin');
+        $this->config['tunnel']     = $container->getParameter('tunnel');
 
         /* These following configs are for button customization */
 
@@ -69,6 +70,7 @@ class SQwebSQweb
             'locale' => $this->config['lang'],
             'msg' => $this->config['message'],
             'autologin' => $this->config['autologin'],
+            'tunnel' => $this->config['tunnel'],
             // User's custom strings for button customization
             'user_strings' => array(
                 'login' => $this->config['login'],
@@ -86,7 +88,7 @@ class SQwebSQweb
         $this->script  = '<script src="https://cdn.multipass.net/mltpss.min.js" type="text/javascript"></script>'
         . PHP_EOL;
 
-        $this->script .= "<script>/* SDK SQweb Symfony v1.3.1 */
+        $this->script .= "<script>/* SDK SQweb Symfony 1.3.3 */
         var mltpss = new Multipass.default($settings);</script>";
     }
 
@@ -284,7 +286,7 @@ class SQwebSQweb
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CONNECTTIMEOUT_MS => 1000,
                 CURLOPT_TIMEOUT_MS => 1000,
-                CURLOPT_USERAGENT => 'SDK Symfony 1.3.1',
+                CURLOPT_USERAGENT => 'SDK Symfony 1.3.3',
                 CURLOPT_POSTFIELDS => [
                     'token' => $_COOKIE['z'],
                     'site_id' => $this->config['id_site'],

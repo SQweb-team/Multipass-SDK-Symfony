@@ -38,6 +38,7 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('lang')->end()
                         ->scalarNode('message')->end()
                         ->scalarNode('sitename')->end()
+                        ->scalarNode('tunnel')->end()
                         ->scalarNode('login')->end()
                         ->scalarNode('connected')->end()
                         ->scalarNode('support')->end()
