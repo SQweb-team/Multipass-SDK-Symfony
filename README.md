@@ -67,14 +67,14 @@ For additional settings, see "[Options](#options)" below.
 1. Be sure you are using the twig bundle, if not, execute the following command in your project root: `composer require twig`
 
 2. Now go to `packages/twig.yaml` and copy paste the following piece of code. Be sure to use your real id_site on this line: `id_site: 00000` and replace `"website_name"` with your actual website name.
-	
+
 	```
 	twig:
 	   [...]
-	    
+
 		globals:
 	  	  sqweb: "@s_qweb_s_qweb.SQweb"
-		
+
 	# SQweb | Multipass Configuration
 	s_qweb_s_qweb:
 	  config:
@@ -99,10 +99,10 @@ For additional settings, see "[Options](#options)" below.
 	```
 
 	**Don't forget to set your `id_site`, `sitename` and `lang` accordingly.**
-	
+
 	For additional settings, see "[Options](#options)" below.
 
-3. In your project root,  execute `composer require mltpss/symfony-bundle`. 
+3. In your project root,  execute `composer require mltpss/symfony-bundle`.
 
 ## Usage
 
@@ -296,11 +296,7 @@ Unless otherwise noted, these options default to `false`. You can set them in yo
 |Option|Description
 |---|---|
 |`id_site`|Sets your website SQweb ID. Ex: 123456.|
-|`sitename`|The name that will appear on the large version of our button. You must set this variable.|
-|`blockers`|Automatically display the Multipass modal to detected adblockers.|
-|`message`|A custom message that will be shown to your adblockers. If using quotes, you must escape them.|
-|`targeting`|Only show the button to detected adblockers. Cannot be combined with the `beacon` mode.|
-|`beacon`|Monitor adblocking rates quietly, without showing a SQweb button or banner to the end users.|
+|`sitename`|The name that will appear on the large version of our button. You must set this variable.||
 |`debug`|Output various messages to the browser console while the plugin executes.|
 |`dwide`|Set to `false` to only enable SQweb on the current domain. Defaults to `true`.|
 |`lang`|You may pick between `en_US`, and `fr_FR`.|

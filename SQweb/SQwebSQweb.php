@@ -22,11 +22,8 @@ class SQwebSQweb
         $this->config['id_site']    = $container->getParameter('id_site');
         $this->config['sitename']   = $container->getParameter('sitename');
         $this->config['debug']      = $container->getParameter('debug') ?: 'false';
-        $this->config['targeting']  = $container->getParameter('targeting') ?: 'false';
-        $this->config['beacon']     = $container->getParameter('beacon') ?: 'false';
         $this->config['dwide']      = $container->getParameter('dwide') ?: 'false';
         $this->config['lang']       = $container->getParameter('lang');
-        $this->config['message']    = $container->getParameter('message');
         $this->config['autologin']  = $container->getParameter('autologin');
         $this->config['tunnel']     = $container->getParameter('tunnel');
 
@@ -64,11 +61,8 @@ class SQwebSQweb
             'wsid' => $this->config['id_site'],
             'sitename' => $this->config['sitename'],
             'debug' => $this->config['debug'],
-            'targeting' => $this->config['targeting'],
-            'beacon' => $this->config['beacon'],
             'dwide' => $this->config['dwide'],
             'locale' => $this->config['lang'],
-            'msg' => $this->config['message'],
             'autologin' => $this->config['autologin'],
             'tunnel' => $this->config['tunnel'],
             // User's custom strings for button customization
