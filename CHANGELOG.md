@@ -1,3 +1,7 @@
+## v1.3.4 - 2018-04-16
+
+* Improved the way we log action on support button
+
 ## v1.3.3 - 2018-03-05
 
 * Improved the way we log action on support button

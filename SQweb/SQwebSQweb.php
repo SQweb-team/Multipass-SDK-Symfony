@@ -82,7 +82,7 @@ class SQwebSQweb
         $this->script  = '<script src="https://cdn.multipass.net/mltpss.min.js" type="text/javascript"></script>'
         . PHP_EOL;
 
-        $this->script .= "<script>/* SDK SQweb Symfony 1.3.3 */
+        $this->script .= "<script>/* SDK SQweb Symfony 1.3.4 */
         var mltpss = new Multipass.default($settings);</script>";
     }
 
@@ -280,7 +280,7 @@ class SQwebSQweb
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_CONNECTTIMEOUT_MS => 1000,
                 CURLOPT_TIMEOUT_MS => 1000,
-                CURLOPT_USERAGENT => 'SDK Symfony 1.3.3',
+                CURLOPT_USERAGENT => 'SDK Symfony 1.3.4',
                 CURLOPT_POSTFIELDS => [
                     'token' => $_COOKIE['z'],
                     'site_id' => $this->config['id_site'],
